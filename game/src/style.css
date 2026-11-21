@@ -1,0 +1,36 @@
+/* style.css — the page chrome around the game canvas: a dark backdrop, the
+   canvas centred and scaled to fit the window while keeping its 1280x800
+   shape, and a screen-reader-only status line. */
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  background: #0b1220;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#game {
+  display: block;
+  width: min(100vw, 160vh);
+  height: min(100vh, 62.5vw);
+  touch-action: none;
+  cursor: crosshair;
+  background: #0f172a;
+}
+
+/* Read aloud, never shown: the status line screen readers announce. */
+#status {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
